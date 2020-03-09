@@ -125,3 +125,36 @@ code .
 
 
 add plugin, add README.md
+
+------------13:00-----------
+under github/bitbucket
++
+Repository
+
+ucom_nodejs_20200309
+
+
+cd c:\Users\Admin\node_JS14hr_Mar_2020
+
+git remote add origin https://YOUR_USERNAME@bitbucket.org/YOUR_USERNAME/YOUR_PROJECT_NAME.git
+git push -u origin master
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+### `node.JS`,`npm`,`javascript`
+
+npm config list
+
+C:\Users\Admin\AppData\Roaming\npm
+
+
+npm config get prefix
+
+npm install npm --global
+npm --version
+
+### update npm packages
+```
+npm install npm --global
+npm --version
+```
