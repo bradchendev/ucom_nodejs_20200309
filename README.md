@@ -174,3 +174,33 @@ practice npm list
 
 commit
 push
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+create directory
+lab4_uglifyjs
+
+
+uglify_demo1.js
+~~~~~~~~~~~~~~~~~~~~~~~~~
+var object1 = {
+    "foo":250,
+    "bar":300
+}
+object1.foo += object1.bar;
+console.log(object1.foo);
+
+cd c:\Users\Admin\node_JS14hr_Mar_2020\lab4_uglifyjs
+
+node uglify_demo1.js
+
+
+uglifyjs uglify_demo1.js -c -m --mangle-props
+
+copy/paste to uglify_demo2.js
+
+node uglify_demo2.js
+
+uglifyjs uglify_demo1.js -c -m --mangle-props > demo3.js
+
+https://webpack.js.org/
+
