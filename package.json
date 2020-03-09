@@ -1,0 +1,21 @@
+{
+  "name": "node_JS14hr_MAR_2020",
+  "version": "1.0.0",
+  "description": "* https://nodejs.org/en/",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradchendev/ucom_nodejs_20200309.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bradchendev/ucom_nodejs_20200309/issues"
+  },
+  "homepage": "https://github.com/bradchendev/ucom_nodejs_20200309#readme"
+}

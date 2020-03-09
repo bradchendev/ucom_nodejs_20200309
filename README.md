@@ -204,3 +204,114 @@ uglifyjs uglify_demo1.js -c -m --mangle-props > demo3.js
 
 https://webpack.js.org/
 
+
+terminal.integrated.shell.windows
+
+{
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe"
+}
+bottom left GEAR
+Settings
+Text Editor
+Font
+
+'Source Code Variable', 'Courier New', monospace
+18
+bold
+
+npm search tensorflow
+npm search vaadin
+
+npm cache verify
+
+
+-- https://nodered.org/
+
+npm install -g --unsafe-perm node-red
+
+cd c:\Users\Admin\.node-red
+
+http://127.0.0.1:1880/
+
+
+npm install node-red-node-arduino
+node-red
+
+
+mkdir lab5_npm
+cd lab5_npm
+
+npm init --yes
+
+npm install request --save
+
+copy .gitignore from lab3 to lab5
+
+tryme.js
+
+
+var request = require('request');
+
+request('http://www.uuu.com.tw', function (error, response, body) {
+    if (!error && response.statusCode==200) {
+        console.log(body)
+    } else {
+        console.log(error)
+        console.log(response.statusCode)
+        console.log(body)
+    }
+})
+
+npm uninstall request
+npm install request --save
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{
+    "editor.fontFamily": "'Source Code Variable','Courier New', monospace",
+    "editor.fontSize": 24
+}
+
+
+
+lab6_simple_debug.js
+
+
+var message1 = 'hello world';
+var message2 = "hello world";
+var message3 = 'h';
+var message4 = "h";
+console.log(message1);
+console.log(message2);
+console.log(message3);
+console.log(message4);
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+lab7_adv_debug.js
+
+
+https://install.advancedrestclient.com/install
+https://www.postman.com/
+
+var http = require('http')
+function processRecord(request, response){
+    var body = 'Node.JS Tutorial\n'
+    var contentLength = body.length
+    response.writeHead(200,{
+        'Content-Length':contentLength,
+        'Content-Type':'text/plain'
+    })
+    response.end(body)
+}
+var server = http.createServer(processRecord)
+console.log("server created, start listen to port 8765")
+server.listen(8765)
+
+GET ==> http://localhost:8765
+
+
+
+
