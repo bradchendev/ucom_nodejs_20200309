@@ -158,3 +158,19 @@ npm --version
 npm install npm --global
 npm --version
 ```
+
+npm list --global
+npm list --global --depth=0
+
+npm install uglify-js --global
+npm list --global --depth=0
+
+npx create-react-app lab3_simple_react
+
+cd c:\Users\Admin\node_JS14hr_Mar_2020\lab3_simple_react
+
+check-in code sofar:
+practice npm list
+
+commit
+push
