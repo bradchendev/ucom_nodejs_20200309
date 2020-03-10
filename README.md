@@ -1,9 +1,13 @@
 ### Clone repository from remote
 cd c:\MyProjects
-git clone https://USER_NAME@bitbucket.org/USERNAME/REPO_NAME.git
-cd REPO_NAME
-git pull
-code ucom_nodejs_20200309
+
+c:\MyProjects>git clone https://USER_NAME@bitbucket.org/USERNAME/REPO_NAME.git
+
+c:\MyProjects>cd REPO_NAME
+
+c:\MyProjects\REPO_NAME>git pull
+
+c:\MyProjects\REPO_NAME>code ucom_nodejs_20200309
 
 ### important link 
 * https://nodejs.org/en/
@@ -927,3 +931,198 @@ try {
 oops()
 // this line will not be show
 console.log("program terminate line---")
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+global.coffee = 'hot latte'
+global.juice = 'lemonade'
+tea = 'earl gray'
+function printSomething(name){
+    console.time(global[name])
+    console.log(global[name])
+    console.warn(global[name])
+    console.error(global[name])
+    console.timeEnd(global[name])
+}
+console.time('TOTAL')
+printSomething('coffee')
+printSomething('juice')
+printSomething('hello')
+printSomething('tea')
+console.timeEnd('TOTAL')
+
+
+Lab10
+~~~~~~~~~~~~
+under project:
+lab10_modules ==> make a directory
+
+under foo.js
+module.exports = {
+    qoo: function (data) {
+        console.log("[foo]:[qoo]", data)
+    }
+}
+
+under bar.js
+
+module.exports = {
+    ooo: function (data) {
+        console.log("[bar]:[ooo]", data)
+    }
+}
+
+under index.js
+var foo = require('./foo')
+var bar = require('./bar')
+console.log('inside index.js')
+foo.qoo('hello world')
+bar.ooo('hi js modules')
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+console.log(x2)
+//console.log(x1)
+x1 = 'hello'
+var x2 = 'world'
+console.log(typeof x1, typeof x2)
+console.log(x1, x2)
+function printMessage() {
+    console.log( 'inside printmessage',x1, x2)
+}
+printMessage()
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+"use strict";
+console.log(x2)
+//console.log(x1)
+var x2 = 'world'
+x1 = 'hello'
+console.log(typeof x1, typeof x2)
+console.log(x1, x2)
+function printMessage() {
+    console.log( 'inside printmessage',x1, x2)
+}
+printMessage()
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function foo() {
+    console.log('inside foo begin:', current)
+    var current = 300;
+    implyGlobal = 500;
+    console.log('inside foo after:', current)
+    console.log('inside foo, implyglobal=', implyGlobal)
+}
+
+foo()
+//console.log(current)
+console.log(implyGlobal)
+implyGlobal += 300
+console.log(implyGlobal)
+
+Lab11_scope
+demo3.js
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var x1 = 100
+x2 = 200
+console.log(x1, x2)
+console.log(global.x1, global.x2)
+delete global.x1
+delete global.x2
+console.log(x1, x2)
+
+
+demo4_let.js
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function varTest() {
+    var x = 100;
+    console.log("beginning, x=", x);
+    if (true) {
+        //var x = 200;
+        x = 200;
+        console.log("inside, x=", x);
+    }
+    console.log("outside, x=", x);
+}
+function letTest() {
+    let y = 30;
+    console.log("beginning, y=", y);
+    if (true) {
+        let y = 50;
+        console.log("inside, y=", y);
+    }
+    console.log("outside, y=", y);
+}
+
+varTest();
+letTest();
+
+demo4_let2.js
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function scopeTest() {
+    var x2 = 5
+    var x2 = '500'
+    console.log(x2)
+    let x3 = 3.14
+    //let x3 = 'pi'
+    console.log(x3)
+}
+
+function scopeTest2() {
+    var j = 0;
+    for (let i=j; i<10; i++){
+    //for (var i=j; i<10; i++){
+        console.log(i);
+    }
+    //console.log(i,j);
+}
+
+scopeTest()
+scopeTest2()
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var a = 100;
+var b = 200;
+
+if (true) {
+    let a = 50;
+    var b= 400;
+    console.log(a);
+    console.log(b);
+}
+console.log(a)
+console.log(b)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+//const PROGRAM_TITLE;
+const PROGRAM_TITLE="Hello WORLD";
+//PROGRAM_TITLE += "Hi";
+//const PROGRAM_TITLE = "Hi";
+const MAX1 = 1;
+let i = 100;
+const CONST2 = i+1;
+console.log(MAX1, i, CONST2)
+i+=20
+console.log(MAX1, i, CONST2)
+//CONST2 += 50;
+const AR = [1,2,3,4,5];
+console.log(AR)
+AR.push(6)
+console.log(AR)
+var AR2 = [1,2,3,4,5];
+AR2.push(6)
+console.log(AR2)
+AR2 = ['p','q','r']
+console.log(AR2)
+//AR = ['P','Q','R']
+console.log(AR)
+
+
+
