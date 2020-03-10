@@ -1126,3 +1126,104 @@ console.log(AR)
 
 
 
+
+data\\info.txt
+copy paste from wiki
+
+var process = require('process')
+console.log(process.cwd())
+
+var fs = require("fs")
+console.log("Program start")
+var data = fs.readFileSync('data\\info.txt')
+console.log(data.toString())
+console.log("Program terminated")
+
+~~~~~~~~~~~~~~~~~~~~~~~
+setTimeout(()=>{console.log("I am ready, can start to work")}, 2000)
+setTimeout(()=>{console.log("I am ready, can start to work")}, 2000)
+setTimeout(()=>{console.log("I am ready, can start to work")}, 2000)
+setTimeout(()=>{console.log("I am ready, can start to work")}, 2000)
+setTimeout(()=>{console.log("I am ready, can start to work")}, 2000)
+console.log("doing something in main thread")
+~~~~~~~~~~~~~~~~~~~~~~
+setTimeout(()=>{
+    console.log("prepare for stage2")
+    setTimeout(()=>{console.log("prepare for stage3")},2000)
+},2000)
+
+console.log("start working")
+~~~~~~~~~~~~~~~~~~~~~~~~
+"use strict";
+var fs = require('fs')
+
+fs.open('data\\info.txt', 'r', (error, handle) => {
+    if (error){
+        return console.log(error)
+    }
+    console.log("file open successful, continue")
+ });
+
+
+
+~~~~~~~~~~~~~~~~~~~
+"use strict";
+var fs = require('fs')
+console.log("program start")
+fs.open('data\\info.txt', 'r', (error, handle) => {
+    if (error) {
+        return console.log(error)
+    }
+    console.log("file open successful, continue")
+    var buffer = new Buffer(10000, 0)
+    fs.read(handle, buffer, 0, 10000, null, (error, length) => {
+        console.log("total:", length, "read")
+        const result = buffer.slice(0, length)
+        console.log("data read:", result.toString())
+        fs.close(handle, () => { })
+
+    })
+});
+console.log("program finish")
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+setTimeout(()=>{
+    try{
+
+        throw new Error("oops, happen something in another thread..")
+    }catch(e){
+        console.warn('got an error:',e)
+    }
+},2000)
+console.log('program terminated')
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+try {
+    
+    setTimeout(() => { throw new Error("HAHA") }, 2000)
+} catch (e) {
+    console.log("got an error:"+e)
+}
+console.log("program terminated")
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const p1 = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        try{
+            //throw new Error("oops!")
+            console.log("no error")
+            resolve(1000)
+        } catch(e){
+            reject(e)
+        }
+    },2000)
+})
+console.log("start p1")
+p1.then(result=>console.log("OK! result="+result))
+.catch(error=>console.error("Found exception:"+error))
+console.log("stop p1")
+
+
