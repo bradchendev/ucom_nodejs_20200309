@@ -390,3 +390,360 @@ console.log(parseFloat(x), parseFloat(y), parseFloat(z))
 console.log(parseInt('ddd'))
 console.log(5==NaN, parseInt('ddd')==NaN, isNaN(parseInt('ddd')))
 console.log(isFinite(5/3), isFinite(5/0), isFinite(-5/0))
+
+
+
+
+## Day2
+
+check in yesterday code
+basic type practice
+
+### Clone repository from remote
+cd c:\temp_phw
+git clone https://USER_NAME@bitbucket.org/USERNAME/REPO_NAME.git
+cd REPO_NAME
+git pull
+code ucom_nodejs_20200309
+
+
+
+
+demo6.js
+
+// 0, "", NaN, null, undefined
+var condition = undefined
+if (condition) {
+    console.log("return true")
+} else {
+    console.log("return false")
+}
+
+var elements = [0, "", NaN, null, undefined]
+console.log("type of elements:", typeof elements, Array.isArray(elements))
+
+
+~~~~~~~~~~~~~~~~~~~~~~
+// 0, "", NaN, null, undefined
+var condition = undefined
+if (condition) {
+    console.log("return true")
+} else {
+    console.log("return false")
+}
+
+var elements = [0, "", NaN, null, undefined]
+console.log("type of elements:", typeof elements, Array.isArray(elements))
+
+elements.forEach(evaluate)
+function evaluate(value, index, array) {
+    if (value) {
+        console.log(index, value, "return true")
+    } else {
+        console.log(index, value, "return false")
+    }
+}
+console.log(typeof evaluate)
+console.log("### method2 ###")
+elements.forEach((value, index, array) => {
+    if (value) {
+        console.log(index, value, "return true")
+    } else {
+        console.log(index, value, "return false")
+    }
+})
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var x1 = 'pqrst'
+var x2 = "pqrst"
+// var x3
+//var x3 = null
+console.log(typeof x1, x1.length)
+console.log(typeof x2, x2.length)
+//console.log(typeof x3, x3.length)
+var x3 = "abcdefg1234567中文輸入也沒有問題"
+// x3.forEach((v, i, a) => {
+//     console.log(v)
+// })
+x3.split('').forEach(e => {
+    console.log("*",e)
+})
+
+
+demo8.js
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+console.log("I have " + 1 + 2 + " computers")
+console.log(1 + 2 + " computers are mine")
+console.log("Sunday".indexOf("day"))
+console.log("Sunday".indexOf("DAY"))
+console.log("Sunday".substr(3,3))
+console.log("Sunday".slice(3,6))
+var x1 = "Sunday,Monday,Tuesday,Wednesday".split(",")
+console.log(typeof x1,Array.isArray(x1), x1)
+console.log(x1[0],x1[1],x1[2],x1[3],x1[4],x1[5])
+console.log(x1[-1],x1[-5], x1[100])
+var y1 = "\t\n\r\t    abc def ghi   \t\n"
+console.log(y1)
+console.log(y1.trim())
+
+
+demo9.js
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var e = "Firebase, Foo, foo, function, xyz"
+console.log(e)
+var e1 = "Firebase, Foo, foo, function, xyz".replace(new RegExp("[Ff]","g"),"q")
+console.log(e1)
+var e2 = "Firebase, Foo, foo, function, xyz".replace(/[Ff]/g, 'q')
+console.log(e2)
+
+
+// 
+var e2 = "Firebase, Foo, foo, function, xyz".replace(/[Ffx]/g, 'q')
+console.log(e2)
+// qirebase, qoo, qoo, qunction, qyz
+var e2 = "Firebase, Foo, foo, function, xyz".replace(/f/g,'q')
+console.log(e2)
+// Firebase, Foo, qoo, qunction, xyz
+
+// Case-insensitive 
+var e3 = "Firebase, Foo, foo, function, xyz".replace(/f/gi,'q')
+console.log(e3)
+
+
+demo10.js
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var o1 = {}
+var o2 = {
+    name: "NodeJS", duration: 14, period: ["Monday", "Tuesday"]
+}
+var o3 = {}
+console.log(typeof o1, typeof o2)
+console.log(o1, o2)
+console.log(o2.name,o3.name)
+o3["name"]="POOP"
+o3["duration"]=35
+o3["period"]=["Saturday"]
+console.log(o2.name,o3.name)
+console.log("object property count for o2:",Object.keys(o2).length)
+console.log("object property count for o3:",Object.keys(o3).length)
+delete o3.name
+console.log(o2.name,o3.name)
+delete o2.name
+console.log(o2.name,o3.name)
+console.log("object property count for o2:",Object.keys(o2).length)
+console.log("object property count for o3:",Object.keys(o3).length)
+
+demo11.js
+https://github.com/axios/axios
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var x1 = {name:'Mark Ho',role:'engineer',grade:6}
+var j1 = JSON.stringify(x1)
+var x2 = ['Sunday','Monday','Tuesday']
+var j2 = JSON.stringify(x2)
+console.log(typeof x1, typeof j1, typeof x2, typeof j2)
+console.log(x1, j1)
+console.log(x2, j2)
+var o1 = JSON.parse(j1)
+var o2 = JSON.parse(j2)
+console.log(Array.isArray(o1), typeof o1, o1)
+console.log(Array.isArray(o2), typeof o2, o2)
+
+var temp1 = '{"name":"Mark Ho","role":"engineer","grade":6}'
+var o1 = JSON.parse(temp1)
+console.log(typeof temp1, typeof o1)
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+https://bugzilla.mozilla.org/rest/bug/35
+https://chrome.google.com/webstore/category/extensions?hl=zh-TW
+json viewer
+https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=zh-TW
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var s1 = '{"faults":[],"bugs":[{"qa_contact":"","is_open":false,"regressions":[],"resolution":"WONTFIX","duplicates":[],"keywords":[],"cc":["hchang.mozilla@gmail.com","jlaster@mozilla.com","rexyrexy2@gmail.com","tymerkaev@gmail.com","wlevine@gmail.com"],"whiteboard":"","type":"defect","is_creator_accessible":true,"mentors_detail":[],"is_cc_accessible":true,"creation_time":"1998-04-07T08:37:03Z","alias":"firstBug","priority":"P3","votes":0,"cf_fx_iteration":"---","mentors":[],"id":35,"depends_on":[],"status":"VERIFIED","groups":[],"comment_count":18,"target_milestone":"---","cf_qa_whiteboard":"","cc_detail":[{"id":475800,"email":"hchang.mozilla@gmail.com","name":"hchang.mozilla@gmail.com","nick":"hchang","real_name":"Henry Chang [:hchang]"},{"email":"jlaster@mozilla.com","id":555817,"name":"jlaster@mozilla.com","real_name":"Jason Laster [:jlast]","nick":"jlast"},{"real_name":"","nick":"rexyrexy2","name":"rexyrexy2@gmail.com","email":"rexyrexy2@gmail.com","id":463956},{"nick":"tymerkaev","real_name":"","name":"tymerkaev@gmail.com","id":356256,"email":"tymerkaev@gmail.com"},{"email":"wlevine@gmail.com","id":68465,"real_name":"Will Levine","nick":"wlevine","name":"wlevine@gmail.com"}],"creator_detail":{"nick":"weitsang","real_name":"","name":"weitsang@cs.cornell.edu","id":55,"email":"weitsang@cs.cornell.edu"},"regressed_by":[],"cf_fx_points":"---","last_change_time":"2018-07-16T03:22:35Z","op_sys":"Solaris","assigned_to_detail":{"name":"mcafee@gmail.com","real_name":"Chris McAfee","nick":"mcafee","email":"mcafee@gmail.com","id":1672},"flags":[],"platform":"Sun","summary":"Navigator does not free preference hash table when exit.","classification":"Graveyard","blocks":[],"url":"","dupe_of":null,"cf_user_story":"","version":"1998-03-31","severity":"minor","creator":"weitsang@cs.cornell.edu","component":"XFE","assigned_to":"mcafee@gmail.com","product":"MozillaClassic Graveyard","see_also":[],"is_confirmed":true,"cf_last_resolved":"1998-12-12T17:06:46Z"}]}'
+var s2 = `
+{
+    "faults": [
+      
+    ],
+    "bugs": [
+      {
+        "qa_contact": "",
+        "is_open": false,
+        "regressions": [
+          
+        ],
+        "resolution": "WONTFIX",
+        "duplicates": [
+          
+        ],
+        "keywords": [
+          
+        ],
+        "cc": [
+          "hchang.mozilla@gmail.com",
+          "jlaster@mozilla.com",
+          "rexyrexy2@gmail.com",
+          "tymerkaev@gmail.com",
+          "wlevine@gmail.com"
+        ],
+        "whiteboard": "",
+        "type": "defect",
+        "is_creator_accessible": true,
+        "mentors_detail": [
+          
+        ],
+        "is_cc_accessible": true,
+        "creation_time": "1998-04-07T08:37:03Z",
+        "alias": "firstBug",
+        "priority": "P3",
+        "votes": 0,
+        "cf_fx_iteration": "---",
+        "mentors": [
+          
+        ],
+        "id": 35,
+        "depends_on": [
+          
+        ],
+        "status": "VERIFIED",
+        "groups": [
+          
+        ],
+        "comment_count": 18,
+        "target_milestone": "---",
+        "cf_qa_whiteboard": "",
+        "cc_detail": [
+          {
+            "id": 475800,
+            "email": "hchang.mozilla@gmail.com",
+            "name": "hchang.mozilla@gmail.com",
+            "nick": "hchang",
+            "real_name": "Henry Chang [:hchang]"
+          },
+          {
+            "email": "jlaster@mozilla.com",
+            "id": 555817,
+            "name": "jlaster@mozilla.com",
+            "real_name": "Jason Laster [:jlast]",
+            "nick": "jlast"
+          },
+          {
+            "real_name": "",
+            "nick": "rexyrexy2",
+            "name": "rexyrexy2@gmail.com",
+            "email": "rexyrexy2@gmail.com",
+            "id": 463956
+          },
+          {
+            "nick": "tymerkaev",
+            "real_name": "",
+            "name": "tymerkaev@gmail.com",
+            "id": 356256,
+            "email": "tymerkaev@gmail.com"
+          },
+          {
+            "email": "wlevine@gmail.com",
+            "id": 68465,
+            "real_name": "Will Levine",
+            "nick": "wlevine",
+            "name": "wlevine@gmail.com"
+          }
+        ],
+        "creator_detail": {
+          "nick": "weitsang",
+          "real_name": "",
+          "name": "weitsang@cs.cornell.edu",
+          "id": 55,
+          "email": "weitsang@cs.cornell.edu"
+        },
+        "regressed_by": [
+          
+        ],
+        "cf_fx_points": "---",
+        "last_change_time": "2018-07-16T03:22:35Z",
+        "op_sys": "Solaris",
+        "assigned_to_detail": {
+          "name": "mcafee@gmail.com",
+          "real_name": "Chris McAfee",
+          "nick": "mcafee",
+          "email": "mcafee@gmail.com",
+          "id": 1672
+        },
+        "flags": [
+          
+        ],
+        "platform": "Sun",
+        "summary": "Navigator does not free preference hash table when exit.",
+        "classification": "Graveyard",
+        "blocks": [
+          
+        ],
+        "url": "",
+        "dupe_of": null,
+        "cf_user_story": "",
+        "version": "1998-03-31",
+        "severity": "minor",
+        "creator": "weitsang@cs.cornell.edu",
+        "component": "XFE",
+        "assigned_to": "mcafee@gmail.com",
+        "product": "MozillaClassic Graveyard",
+        "see_also": [
+          
+        ],
+        "is_confirmed": true,
+        "cf_last_resolved": "1998-12-12T17:06:46Z"
+      }
+    ]
+  }
+  `
+  var o1 = JSON.parse(s1)
+  var o2 = JSON.parse(s2)
+  console.log(typeof o1, typeof o2)
+  console.log(o1)
+  console.log(o2)
+
+
+demo13.js
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var a1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+var a2 = Array.from('abcdefg')
+var a3 = 'abcdefg'.split('')
+console.log(a1, a2, a3)
+console.log(Array.isArray(a1),Array.isArray(a2),Array.isArray(a3))
+var a4 = new Array()
+a4.push('a')
+a4.push('b')
+a4.push('c')
+a4.push('d')
+console.log(a4, Array.isArray(a4))
+// push, pop
+console.log(a1.pop(), a1)
+a1.push('G')
+console.log(a1)
+console.log(a2.shift(), a2)
+a2.unshift('A')
+console.log(a2)
+
+demo14.js
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var a1 = [1, 2, 3, 4, 5, 6, 7, 8]
+var r1 = a1.join()
+console.log(typeof r1, r1)
+var a2 = ['red', 'yellow', 'blue']
+var r2 = a2.join()
+console.log(typeof r2, r2)
+var r3 = a2.join('-')
+console.log(r3)
+var a3 = ['www', 'uuu', 'com', 'tw']
+var r4 = a3.join('.')
+console.log(r4)
+array4 = Array.from('HelloWorld')
+console.log(array4.sort())
+var sum = 0
+a1.forEach(function (element) { sum += element }, this)
+console.log("summation of a1=", sum)
